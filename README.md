@@ -27,9 +27,9 @@ Efforts have been made to isolate the student notebook from the EdX Server by ru
 ### XBlock
 * login as the root user: `sudo -i`
 * New Installation:
-    * `/edx/bin/pip.edxapp install git+https://github.com/ibleducation/jupyter-graded-xblock.git`
+    * `/edx/bin/pip.edxapp install git+https://github.com/ibleducation/jupyter-edx-grader-xblock.git`
 * Re-Installation:
-    * `/edx/bin/pip.edxapp install --upgrade --no-deps --force-reinstall git+https://github.com/ibleducation/jupyter-graded-xblock.git`
+    * `/edx/bin/pip.edxapp install --upgrade --no-deps --force-reinstall git+https://github.com/ibleducation/jupyter-edx-grader-xblock.git`
 
 ### Docker Installation
 - Install Docker
