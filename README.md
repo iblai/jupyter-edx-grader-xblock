@@ -179,6 +179,13 @@ On the main author screen in the Studio, there are three major instructor relate
   - If the student has no more attempts left, they will no longer be able to upload a new notebook
   - The most recent submission is the one recorded for grading
 
+## Usage notes
+
+### Watch the demo!
+
+[![demo](https://github.com/ibleducation/jupyter-viewer-xblock/blob/master/demo-thumbnail.png)](http://www.youtube.com/watch?v=SwRAs8_FIdo)
+
+
 ## Copyright and License
 (c) 2017 IBL Studios and Lorena A. Barba, [code is under BSD-3 clause](https://github.com/engineersCode/EngComp/blob/master/LICENSE). 
 [![License](https://img.shields.io/badge/License-BSD%203--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause)
