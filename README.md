@@ -14,8 +14,8 @@ The student gets a visual score report, and the score gets added to his/her prog
 ## Features and Support
 - Integrated into EdX Grading System
 - Maximum point values are pulled from the instructor version of the notebook
-- A separate python3 virtual environment is kept for each course
-- Each student's notebook is run within its own docker container
+- A separate Python3 virtual environment is kept for each course
+- Each student's notebook is run within its own Docker container
 - [Several Other Configuration Options](#xblock-settings)
 - Only supports auto-graded cells - **Does not support manually graded cells**.
 
@@ -188,4 +188,5 @@ On the main author screen in the Studio, there are three major instructor relate
 
 ## Copyright and License
 (c) 2017 IBL Studios and Lorena A. Barba, [code is under BSD-3 clause](https://github.com/engineersCode/EngComp/blob/master/LICENSE). 
+
 [![License](https://img.shields.io/badge/License-BSD%203--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause)
