@@ -460,6 +460,9 @@ class JupyterGradedXBlock(StudioEditableXBlockMixin, ScorableXBlockMixin,
 
     def _is_past_due(self):
         """Returns True if unit is past due"""
+        if self.due is None:
+            return False
+
         if timezone.now() > self.due:
             return True
 
