@@ -1,13 +1,21 @@
 # Graded Jupyter Notebook Integration
 
 ## Overview
-This XBlock uses Docker and [nbgrader](http://nbgrader.readthedocs.io/en/stable/) to create a Graded Jupyter Notebook XBlock that can be tracked as a problem within EdX.
+
+_Auto-grade a student assignment created as a Jupyter notebook, using the [nbgrader](http://nbgrader.readthedocs.io/en/stable/) Jupyter extension, and write the score in the Open edX gradebook_ 
+
+> See also the [Jupyter Notebook Viewer XBlock](https://github.com/ibleducation/jupyter-viewer-xblock) to populate course content from publicly available Jupyter notebooks.
+
+This XBlock uses Docker and nbgrader to create a Python environment and auto-grade a Jupyter Notebook, and tracks the resulting score as a problem within an EdX graded sub-section.
+It allows an instructor to upload the student's version of an assignment created with nbgrader, upload a `requirements.txt` file to configure the environment, and set the maximum number of tries for the student.
+The student downloads the assignment file, answers the questions (executing all cells), and uploads the solution, which get immediately auto-graded. 
+The student gets a visual score report, and the score gets added to his/her progress in the Open edX gradebook.
 
 ## Features and Support
 - Integrated into EdX Grading System
 - Maximum point values are pulled from the instructor version of the notebook
-- A separate python3 virtual environment is kept for each course
-- Each student's notebook is run within its own docker container
+- A separate Python3 virtual environment is kept for each course
+- Each student's notebook is run within its own Docker container
 - [Several Other Configuration Options](#xblock-settings)
 - Only supports auto-graded cells - **Does not support manually graded cells**.
 
@@ -27,9 +35,9 @@ Efforts have been made to isolate the student notebook from the EdX Server by ru
 ### XBlock
 * login as the root user: `sudo -i`
 * New Installation:
-    * `/edx/bin/pip.edxapp install git+https://github.com/ibleducation/jupyter-graded-xblock.git`
+    * `/edx/bin/pip.edxapp install git+https://github.com/ibleducation/jupyter-edx-grader-xblock.git`
 * Re-Installation:
-    * `/edx/bin/pip.edxapp install --upgrade --no-deps --force-reinstall git+https://github.com/ibleducation/jupyter-graded-xblock.git`
+    * `/edx/bin/pip.edxapp install --upgrade --no-deps --force-reinstall git+https://github.com/ibleducation/jupyter-edx-grader-xblock.git`
 
 ### Docker Installation
 - Install Docker
@@ -171,3 +179,14 @@ On the main author screen in the Studio, there are three major instructor relate
   - If the student has no more attempts left, they will no longer be able to upload a new notebook
   - The most recent submission is the one recorded for grading
 
+## Usage notes
+
+### Watch the demo!
+
+[![demo](https://github.com/ibleducation/jupyter-viewer-xblock/blob/master/demo-thumbnail.png)](http://www.youtube.com/watch?v=SwRAs8_FIdo)
+
+
+## Copyright and License
+(c) 2017 IBL Studios and Lorena A. Barba, [code is under BSD-3 clause](https://github.com/engineersCode/EngComp/blob/master/LICENSE). 
+
+[![License](https://img.shields.io/badge/License-BSD%203--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause)
