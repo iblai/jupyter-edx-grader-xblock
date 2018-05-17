@@ -1,5 +1,4 @@
 """Jupyter Notebook Graded XBlock"""
-import datetime
 import inspect
 import json
 import logging
@@ -156,7 +155,7 @@ class JupyterGradedXBlock(StudioEditableXBlockMixin, ScorableXBlockMixin,
 
         # Disable uploading inputs
         disabled_str = ''
-        if self.max_attempts > 0 and self.student_attempts >= self.max_attempts:
+        if self._is_past_due() or (self.max_attempts > 0 and self.student_attempts >= self.max_attempts):
             disabled_str = 'disabled'
 
         # HTML Template and Context
@@ -370,6 +369,9 @@ class JupyterGradedXBlock(StudioEditableXBlockMixin, ScorableXBlockMixin,
         elif not self.nb_name == f.filename:
             response['error'] = "Uploaded notebook ({}) must be named: {}"\
                 .format(f.filename, self.nb_name)
+        # Make sure it's not past due
+        elif self._is_past_due():
+            response['error'] = "Unable to submit past due date: {}".format(self.due)
         else:
             response = None
 
@@ -455,6 +457,11 @@ class JupyterGradedXBlock(StudioEditableXBlockMixin, ScorableXBlockMixin,
         )
 
         return html
+
+    def _is_past_due(self):
+        """Returns True if unit is past due"""
+        if timezone.now() > self.due:
+            return True
 
 
     # TO-DO: change this to create the scenarios you'd like to see in the
