@@ -8,7 +8,7 @@ _Auto-grade a student assignment created as a Jupyter notebook, using the [nbgra
 
 This XBlock uses Docker and nbgrader to create a Python environment and auto-grade a Jupyter Notebook, and tracks the resulting score as a problem within an EdX graded sub-section.
 It allows an instructor to upload an assignment created with nbgrader, upload a `requirements.txt` file to configure the environment, set the maximum number of tries for the student, and set a deadline for the submission.
-The student downloads the assignment file, answers the questions (executing all cells), and uploads the solution, which get immediately auto-graded. 
+The student downloads the assignment file, answers the questions (executing all cells), and uploads the solution, which gets immediately auto-graded. 
 The student gets a visual score report, and the score gets added to his/her progress in the Open edX gradebook.
 
 ## Features and Support
