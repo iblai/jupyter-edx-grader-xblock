@@ -466,6 +466,10 @@ class JupyterGradedXBlock(StudioEditableXBlockMixin, ScorableXBlockMixin,
         if timezone.now() > self.due:
             return True
 
+    def max_score(self):
+        """Return current max possible score"""
+        return self.raw_possible
+
 
     # TO-DO: change this to create the scenarios you'd like to see in the
     # workbench while developing your XBlock.
