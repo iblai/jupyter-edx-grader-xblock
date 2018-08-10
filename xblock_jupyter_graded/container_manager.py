@@ -127,10 +127,10 @@ class ContainerManager(object):
         
         # Evaluate output
         if p.returncode != 0:
-            log.debug("OUT")
-            log.debug(out)
-            log.debug("ERR")
-            log.debug(err)
+            log.info("OUT")
+            log.info(out)
+            log.info("ERR")
+            log.info(err)
             raise DockerBuildError(out.decode('utf-8'))
 
     def _add_ipykernel(self, package_strs):

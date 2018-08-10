@@ -22,7 +22,7 @@ def package_data(pkg, roots):
 
 setup(
     name='xblock_jupyter_graded',
-    version='0.5',
+    version='0.5.1',
     description='Grades Jupyter Notebooks in your XBlock',
     license='BSD3',          # TODO: choose a license: 'AGPL v3' and 'Apache 2.0' are popular.
     packages=[
