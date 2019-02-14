@@ -21,6 +21,8 @@ from xblockutils.studio_editable import StudioEditableXBlockMixin
 from xblockutils.resources import ResourceLoader
 from xmodule.studio_editable import StudioEditableBlock
 
+from rest.urls import app_name
+
 log = logging.getLogger(__name__)
 loader = ResourceLoader(__name__)
 
@@ -414,7 +416,7 @@ class JupyterGradedXBlock(StudioEditableXBlockMixin, ScorableXBlockMixin,
 
         # Only get link if notebook has been uploaded
         if self.nb_name:
-            url = reverse(name, 
+            url = reverse("{}:{}".format(app_name, name),
                 kwargs={
                     'course_id': str(self.course_id), 
                     'unit_id': str(self.location),

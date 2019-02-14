@@ -1,4 +1,3 @@
-from .xblock_jupyter_graded import JupyterGradedXBlock
 import os
 from config import EDX_ROOT
 

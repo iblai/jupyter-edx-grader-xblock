@@ -35,7 +35,7 @@ setup(
     ],
     entry_points={
         'xblock.v1': [
-            'xblock_jupyter_graded = xblock_jupyter_graded:JupyterGradedXBlock',
+            'xblock_jupyter_graded = xblock_jupyter_graded.xblock_jupyter_graded:JupyterGradedXBlock',
         ]
     },
     package_data=package_data("xblock_jupyter_graded", ["static", "migrations",
