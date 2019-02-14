@@ -8,8 +8,6 @@ function JupyterGradedXBlock(runtime, element, context) {
         var inst = $('#inst_upload_result_'+id);
         inst[0].className = '';
         if (!data.success) {
-            $('#instructor_upload_'+id).prop("disabled", false);
-            $('#instructor_file_'+id).prop("disabled", false);
             inst.addClass("my-alert my-alert-danger");
             inst.html(data.error);
 
@@ -27,9 +25,9 @@ function JupyterGradedXBlock(runtime, element, context) {
                 "href": data.student_download_url
             });
             $('#student_nb_url_'+id).html("Download Student Notebook");
-            $('#instructor_upload_'+id).prop("disabled", true);
-            $('#instructor_file_'+id).prop("disabled", true);
         }
+        $('#instructor_upload_'+id).prop("disabled", false);
+        $('#instructor_file_'+id).prop("disabled", false);
     }
 
     var req_upload_success = function(data, text) {
