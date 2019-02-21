@@ -391,10 +391,6 @@ class JupyterGradedXBlock(StudioEditableXBlockMixin, ScorableXBlockMixin,
         elif os.path.splitext(f.filename)[1] != '.ipynb':
             response['error'] = 'File extension must be .ipynb, not {}'\
                 .format(os.path.splitext(f.filename)[1])
-        # Only allow nb to be uploaded once
-        elif self.nb_name:
-            response['error'] = "Notebook cannot be modified once it has "\
-             "been uploaded".format(f.filename, self.nb_name)
         else:
             response = None
 
