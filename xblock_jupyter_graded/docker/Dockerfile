@@ -1,6 +1,7 @@
 FROM python:latest
 ARG PACKAGES
-RUN pip install --upgrade pip &&  pip install nbgrader
+RUN pip install --upgrade pip && pip install nbgrader==0.6.1
+RUN pip install --upgrade nbconvert==5.6.1
 RUN python3 -m venv /home/temp_env
 RUN /home/temp_env/bin/pip install $PACKAGES
 RUN /home/temp_env/bin/python -m ipykernel install --prefix=/usr/local/ --name="temp_env"
